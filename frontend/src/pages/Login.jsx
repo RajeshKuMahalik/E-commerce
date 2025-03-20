@@ -17,7 +17,7 @@ const Login = () => {
     try {
       if(currentState === 'Sign Up'){
                  
-     const {data} = await axios.post('http://localhost:4000/api/user/register',{name,email,password})
+     const {data} = await axios.post('https://e-commerce-738i.onrender.com/api/user/register',{name,email,password})
      if(data.success) {
       localStorage.setItem('token', data.token)
       setToken(data.token)
@@ -26,7 +26,7 @@ const Login = () => {
      }
       } else {
   
-        const {data} = await axios.post("http://localhost:4000/api/user/login", {password, email})
+        const {data} = await axios.post("https://e-commerce-738i.onrender.com/api/user/login", {password, email})
         if(data.success) {
           localStorage.setItem('token', data.token)
           setToken(data.token)
